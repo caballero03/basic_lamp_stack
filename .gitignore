@@ -2,6 +2,8 @@
 # Application specific files to ignore #
 ########################################
 .env
+vendor/*
+composer.lock
 
 
 #######################
