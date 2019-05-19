@@ -24,8 +24,8 @@ docker run --rm --interactive --tty \
     
     
     
-// Another PHP library
+// Update
 docker run --rm --interactive --tty \
     --volume $PWD:/app \
     --user $(id -u):$(id -g) \
-    composer require --ignore-platform-reqs --no-scripts some/otherthing
+    composer update --ignore-platform-reqs --no-scripts
