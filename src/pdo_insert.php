@@ -1,41 +1,58 @@
 <?php
 
-use PDO;
-
 // Connect to the database
 // $con = new PDO('mysql:host='.getenv'DATABASE_HOST').'; dbname='.getenv'MYSQL_DATABASE'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
-$pdo = new PDO(
-    $config = [
+$config = [
         'schema' => 'mysql',
         'host' => 'mysql-service',
         'port' => '3306',
-        'dbname' => getenv'MYSQL_DATABASE'),
-        'charset' => 'utf8',
+        'dbname' => getenv('MYSQL_DATABASE'),
+        'charset' => 'utf8'
     ];
     
-    $this->buildConnectionDSN($config),
+$pdo = new PDO(
+    buildConnectionDSN($config),
     getenv('MYSQL_USER'),
     getenv('MYSQL_PASSWORD')
 );
+
+$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
         
         
 // Just print what we got to see it
 var_dump($_POST);
 
 
-// TODO: Need to make a table called user in the DB
-$statement = $pdo->prepare("INSERT INTO `user` (`date`, `username`, `password`) 
-                            VALUES(:date, :username, :password)");
-$statement->execute(array(
-    'date' => date('Y-m-d H:i:s'),
-    'username' => $_POST['username'],
-    'password' => $_POST['password']
-));
+if( isset($_POST['username']) ) {
+    try {
+        $sql = "CREATE TABLE IF NOT EXISTS `user` (
+            `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+            `date` datetime DEFAULT NULL,
+            `username` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+            `password` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+            PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;";
+            
+        $statement = $pdo->prepare($sql);
+        $statement->execute();
 
-$last_user_id = $pdo->lastInsertId();
 
-echo 'Inserted user: ' . $printstat_id . ' into DB.' . PHP_EOL;
+        // TODO: Need to make a table called user in the DB
+        $statement = $pdo->prepare("INSERT INTO `user` (`date`, `username`, `password`) 
+                                    VALUES(:date, :username, :password)");
+        $statement->execute(array(
+            'date' => date('Y-m-d H:i:s'),
+            'username' => $_POST['username'],
+            'password' => $_POST['password']
+        ));
 
+        $last_user_id = $pdo->lastInsertId();
+
+        echo 'Inserted user: ' . $printstat_id . ' into DB.' . PHP_EOL;
+    } catch(PDOException $e) {
+        echo $e->getMessage();//Remove or change message in production code
+    }
+}
 
 
 
