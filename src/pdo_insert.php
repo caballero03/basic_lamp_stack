@@ -1,7 +1,9 @@
 <?php
 
 // Connect to the database
-$pdo = new PDO('mysql:host='.getenv('DATABASE_HOST').'; dbname='.getenv('MYSQL_DATABASE'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
+$pdo = new PDO('mysql:host='.getenv('DATABASE_HOST').'; dbname='.getenv('MYSQL_DATABASE'),
+                getenv('MYSQL_USER'),
+                getenv('MYSQL_PASSWORD'));
 
 // Setup error handling
 $pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
