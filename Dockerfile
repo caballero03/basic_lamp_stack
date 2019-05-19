@@ -6,6 +6,8 @@ RUN apt-get update \
 
 ENV APACHE_DOCUMENT_ROOT /var/www/html
 
+COPY apache.conf.d/webserver.conf /etc/apache2/sites-available/000-default.conf
+
 RUN a2enmod rewrite
 
 WORKDIR /var/www/html
