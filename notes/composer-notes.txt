@@ -1,6 +1,6 @@
 
 
-// Redis client library
+// Redis client library (Optional)
 docker run --rm --interactive --tty \
     --volume $PWD:/app \
     --user $(id -u):$(id -g) \
@@ -8,7 +8,7 @@ docker run --rm --interactive --tty \
     
     
     
-// HTTP Guzzle client library
+// HTTP Guzzle client library (Optional)
 docker run --rm --interactive --tty \
     --volume $PWD:/app \
     --user $(id -u):$(id -g) \
@@ -16,7 +16,7 @@ docker run --rm --interactive --tty \
 
 
 
-// RedBeanPHP -- ORM for SQl database
+// RedBeanPHP -- ORM for SQl database (Optional)
 docker run --rm --interactive --tty \
     --volume $PWD:/app \
     --user $(id -u):$(id -g) \
@@ -24,7 +24,7 @@ docker run --rm --interactive --tty \
     
     
     
-// Update
+// Update (You only need to run this one)
 docker run --rm --interactive --tty \
     --volume $PWD:/app \
     --user $(id -u):$(id -g) \

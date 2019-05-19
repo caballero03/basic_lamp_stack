@@ -27,4 +27,4 @@ docker-compose up --build -d
 Step 5)
 Visit: [http://localhost:8080](http://localhost:8080) for webserver index page
 
-also, visit: [http://localhost:8081](http://localhost:8081) for PHPMyAdmin
+also, visit: [http://localhost:8081](http://localhost:8081) for PHPMyAdmin DB tool
