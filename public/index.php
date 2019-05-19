@@ -23,9 +23,9 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 
-require __DIR__ . '/../src/test.php';
+// require __DIR__ . '/../src/test.php';
 
 // require __DIR__ . '/../src/pdo_insert.php';
 
-// require __DIR__ . '/../src/redbean_insert.php';
+require __DIR__ . '/../src/redbean_insert.php';
 

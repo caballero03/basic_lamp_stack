@@ -3,7 +3,7 @@
 use PDO;
 
 // Connect to the database
-// $con = new PDO('mysql:host='.getenv'DATABASE_HOST').'; dbname='.getenv'MYSQL_DATABASE'), getenv('MYSQL_USERNAME'), getenv('MYSQL_PASSWORD'));
+// $con = new PDO('mysql:host='.getenv'DATABASE_HOST').'; dbname='.getenv'MYSQL_DATABASE'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
 $pdo = new PDO(
     $config = [
         'schema' => 'mysql',
@@ -14,7 +14,7 @@ $pdo = new PDO(
     ];
     
     $this->buildConnectionDSN($config),
-    getenv('MYSQL_USERNAME'),
+    getenv('MYSQL_USER'),
     getenv('MYSQL_PASSWORD')
 );
         
