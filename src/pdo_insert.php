@@ -25,6 +25,7 @@ var_dump($_POST);
 
 if( isset($_POST['username']) ) {
     try {
+        // Need to make a table called user in the DB if it does not exist already
         $sql = "CREATE TABLE IF NOT EXISTS `user` (
             `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
             `date` datetime DEFAULT NULL,
@@ -37,7 +38,7 @@ if( isset($_POST['username']) ) {
         $statement->execute();
 
 
-        // TODO: Need to make a table called user in the DB
+        // Insert our new record
         $statement = $pdo->prepare("INSERT INTO `user` (`date`, `username`, `password`) 
                                     VALUES(:date, :username, :password)");
         $statement->execute(array(
