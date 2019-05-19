@@ -14,7 +14,7 @@ docker run --rm --interactive --tty \
 **Step 2)**
 Copy the file `sample.env` to another file called `.env`
 
-Step 3)**
+**Step 3)**
 Edit `.env` file to suit your project
 
 **Step 4)**
