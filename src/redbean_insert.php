@@ -6,9 +6,7 @@ use RedBeanPHP\R as R;
 R::setup( 'mysql:host='.getenv('DATABASE_HOST').';dbname='.getenv('MYSQL_DATABASE'),
         getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD') ); //for both mysql or mariaDB
 
-// Just print what we got to see it
-var_dump($_POST);
-
+// Let's try to insert the data into the database
 if( isset($_POST['username']) ) {
     $user = R::dispense('user');
     $user->date = date('Y-m-d H:i:s');
