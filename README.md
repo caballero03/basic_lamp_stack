@@ -4,7 +4,7 @@
 
 **Step 1)**
 Run this in the root folder of this project:
-```sh
+```bash
 docker run --rm --interactive --tty \
     --volume $PWD:/app \
     --user $(id -u):$(id -g) \
@@ -19,7 +19,7 @@ Edit `.env` file to suit your project
 
 **Step 4)**
 run: 
-```
+```bash
 docker-compose up --build -d
 ```
 
