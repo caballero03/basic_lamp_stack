@@ -18,7 +18,7 @@ if( isset($_POST['username']) ) {
     // This inserts the record and creates the table we need if it does not exist
     $last_user_id = R::store($user);
 
-    echo 'Inserted user: ' . $printstat_id . ' into DB.' . PHP_EOL;
+    echo 'Inserted user: ' . $last_user_id . ' into DB.' . PHP_EOL;
 }
 
 

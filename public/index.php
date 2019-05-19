@@ -23,10 +23,10 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 // Simple example var_dumps the form contents
-require __DIR__ . '/../src/test.php';
+// require __DIR__ . '/../src/test.php';
 
 // Use PDO to insert records
-// require __DIR__ . '/../src/pdo_insert.php';
+require __DIR__ . '/../src/pdo_insert.php';
 
 // Use ReadBeanPHP to insert records
 // require __DIR__ . '/../src/redbean_insert.php';

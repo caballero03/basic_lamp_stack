@@ -1,28 +1,12 @@
 <?php
 
 // Connect to the database
-// $pdo = new PDO('mysql:host='.getenv'DATABASE_HOST').'; dbname='.getenv'MYSQL_DATABASE'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
-$config = [
-        'schema' => 'mysql',
-        'host' => getenv'DATABASE_HOST'),
-        'port' => '3306',
-        'dbname' => getenv('MYSQL_DATABASE'),
-        'charset' => 'utf8'
-    ];
-    
-$pdo = new PDO(
-    buildConnectionDSN($config),
-    getenv('MYSQL_USER'),
-    getenv('MYSQL_PASSWORD')
-);
+$pdo = new PDO('mysql:host='.getenv('DATABASE_HOST').'; dbname='.getenv('MYSQL_DATABASE'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
 
-$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
+// Setup error handling
+$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         
-        
-// Just print what we got to see it
-var_dump($_POST);
-
-
+// Let's try to insert the data into the database
 if( isset($_POST['username']) ) {
     try {
         // Need to make a table called user in the DB if it does not exist already
@@ -49,34 +33,9 @@ if( isset($_POST['username']) ) {
 
         $last_user_id = $pdo->lastInsertId();
 
-        echo 'Inserted user: ' . $printstat_id . ' into DB.' . PHP_EOL;
+        echo 'Inserted user: ' . $last_user_id . ' into DB.' . PHP_EOL;
     } catch(PDOException $e) {
         echo $e->getMessage();//Remove or change message in production code
     }
 }
 
-
-
-
-function buildConnectionDSN(array $params): string
-{
-    $dsn = $params['schema'] . ':';
-
-    if ($params['host'] !== '') {
-        $dsn .= 'host=' . $params['host'] . ';';
-    }
-
-    if ($params['port'] !== '') {
-        $dsn .= 'port=' . $params['port'] . ';';
-    }
-
-    $dsn .= 'dbname=' . $params['dbname'] . ';';
-
-    if ('mysql' === $params['schema']) {
-        $dsn .= 'charset=' . $params['charset'] . ';';
-    } elseif ('pgsql' === $params['schema']) {
-        $dsn .= "options='--client_encoding=".$params['charset']."'";
-    }
-
-    return $dsn;
-}
