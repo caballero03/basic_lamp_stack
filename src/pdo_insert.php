@@ -1,10 +1,10 @@
 <?php
 
 // Connect to the database
-// $con = new PDO('mysql:host='.getenv'DATABASE_HOST').'; dbname='.getenv'MYSQL_DATABASE'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
+// $pdo = new PDO('mysql:host='.getenv'DATABASE_HOST').'; dbname='.getenv'MYSQL_DATABASE'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'));
 $config = [
         'schema' => 'mysql',
-        'host' => 'mysql-service',
+        'host' => getenv'DATABASE_HOST'),
         'port' => '3306',
         'dbname' => getenv('MYSQL_DATABASE'),
         'charset' => 'utf8'
