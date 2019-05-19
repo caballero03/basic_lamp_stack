@@ -1,0 +1,66 @@
+########################################
+# Application specific files to ignore #
+########################################
+.env
+
+
+#######################
+# KDE Kate Swap Files #
+#######################
+.kate-swp
+/.kate-swp/
+**/.kate-swp
+**/.kate-swp/
+**/.kate-swp/**
+
+
+###############################
+# KDE Dolphin Directory Files #
+###############################
+.directory
+/.directory/
+**/.directory
+**/.directory/
+**/.directory/**
+
+########################################
+# IntelliJ Generated Files and Folders #
+########################################
+.classpath
+/.classpath/
+**/.classpath
+**/.classpath/
+**/.classpath/**
+.project
+/.project/
+**/.project
+**/.project/
+**/.project/**
+.settings
+/.settings/
+**/.settings
+**/.settings/
+**/.settings/**
+.idea
+/.idea/
+**/.idea
+**/.idea/
+**/.idea/**
+.metadata
+/.metadata/
+**/.metadata
+**/.metadata/
+**/.metadata/**
+*.iml
+**/*.iml
+*.ipr
+**/*.ipr
+*.iws
+**/*.iws
+atlassian-ide-plugin.xml
+**/atlassian-ide-plugin.xml
+
+###############################################
+# KEEP Git Ignore (This .gitignore) File !!!! #
+###############################################
+!.gitignore
