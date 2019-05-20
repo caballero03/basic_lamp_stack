@@ -28,3 +28,18 @@ docker-compose up --build -d
 Visit: [http://localhost:8080](http://localhost:8080) for webserver index page
 
 also, visit: [http://localhost:8081](http://localhost:8081) for PHPMyAdmin DB tool
+
+
+## Subsequent operation
+
+**To remove running containers:**
+Run:
+```bash
+docker-compose down
+```
+
+**To re-run without building:**
+```bash
+docker-compose up -d
+```
+
