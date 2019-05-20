@@ -15,10 +15,10 @@ if( isset($_POST['username']) ) {
         $sql = "CREATE TABLE IF NOT EXISTS `user` (
             `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
             `date` datetime DEFAULT NULL,
-            `username` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
-            `password` varchar(191) COLLATE utf8mb4_unicode_520_ci DEFAULT NULL,
+            `username` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
+            `password` varchar(191) COLLATE utf8_unicode_ci DEFAULT NULL,
             PRIMARY KEY (`id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;";
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
             
         $statement = $pdo->prepare($sql);
         $statement->execute();
