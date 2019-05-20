@@ -18,7 +18,7 @@ Copy the file `sample.env` to another file called `.env`
 Edit `.env` file to suit your project
 
 **Step 4)**
-run: 
+Run: 
 ```bash
 docker-compose up --build -d
 ```
